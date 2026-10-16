@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Aluno - SGE</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6fb;
+            color: #20243a;
+        }
+
+        header {
+            background: #4f46e5;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        .evento {
+            background: white;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .evento h3 {
+            margin-top: 0;
+        }
+
+        .evento p {
+            color: #667085;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        button:disabled {
+            background: #16845b;
+            cursor: default;
+        }
+
+        #mensagem {
+            color: #16845b;
+            font-weight: bold;
+        }
+
+        footer {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            color: #667085;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SGE - Eventos da Escola</h1>
+        <p>Painel do Aluno</p>
+    </header>
+
+    <main>
+        <h2>Próximos Eventos</h2>
+
+        <div class="evento">
+            <h3>Inovação e Tecnologia</h3>
+            <p>Data: 21 de outubro</p>
+            <p>Horário: 9h às 11h</p>
+            <p>Local: Auditório principal</p>
+            <button onclick="inscrever(this, 'Inovação e Tecnologia')">
+                Inscrever-se
+            </button>
+        </div>
+
+        <div class="evento">
+            <h3>Oficina de Desenvolvimento Web</h3>
+            <p>Data: 24 de outubro</p>
+            <p>Horário: 14h às 16h</p>
+            <p>Local: Laboratório 2</p>
+            <button onclick="inscrever(this, 'Oficina de Desenvolvimento Web')">
+                Inscrever-se
+            </button>
+        </div>
+
+        <div class="evento">
+            <h3>Preparação para o Mercado de Trabalho</h3>
+            <p>Data: 29 de outubro</p>
+            <p>Horário: 19h às 20h30</p>
+            <p>Local: Sala multimídia</p>
+            <button onclick="inscrever(this, 'Preparação para o Mercado de Trabalho')">
+                Inscrever-se
+            </button>
+        </div>
+
+        <p id="mensagem" aria-live="polite"></p>
+    </main>
+
+    <footer>
+        Sistema de Gestão de Eventos (SGE) - Projeto escolar
+    </footer>
+
+    <script>
+        function inscrever(botao, evento) {
+            botao.textContent = "Inscrito ✓";
+            botao.disabled = true;
+
+            document.getElementById("mensagem").textContent =
+                "Inscrição realizada com sucesso em: " + evento + "!";
+        }
+    </script>
+
+</body>
+</html>
